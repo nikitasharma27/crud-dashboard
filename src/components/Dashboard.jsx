@@ -1,8 +1,8 @@
-import { React, useState, useEffect } from 'react';
+import { React } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Dashboard.css';
 import users from '../service/db.json'; 
-import { getUsers } from '../service/getUser.js';
+// import { getUsers } from '../service/getUser.js';
 import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow, Button, Container, Avatar } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -33,7 +33,7 @@ const Dashboard = () => {
                 <TableContainer className="TableBox">
                     <Table>
                         <TableHead className="TableHeader">
-                            <TableRow>
+                            <TableRow className="TableHeader__row">
                                 <TableCell>User</TableCell>
                                 <TableCell>First Name</TableCell>
                                 <TableCell>Last Name</TableCell>
@@ -52,7 +52,7 @@ const Dashboard = () => {
                                     <IconButton aria-label="delete" size="large" onClick={() => deleteUser()}>
                                             <DeleteIcon />
                                     </IconButton>
-                                        <Button variant="contained" className="btn" size="medium">Delete</Button></TableCell>
+                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

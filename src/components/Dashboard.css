@@ -10,5 +10,8 @@
 
 .TableHeader  {
    background-color: #efefef;
-   font-weight: 600;
+}
+
+.TableHeader__row {
+    font-weight: 600;
 }
