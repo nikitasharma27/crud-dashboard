@@ -1,38 +1,45 @@
 import users from './db.json';
     
-export const getUsers = (id) =>
+export const getUser = (email) =>
   new Promise((resolve, reject) => {
 
-    //   const user = users[id];
+    let LoggedInUser = "";
+
+    Object.values(users.data).forEach(function(user, index) {
       
-    if (!users) {
+      if (user.email === email) {
+        LoggedInUser = user;
+      }
+    });
+      
+    if (!LoggedInUser) {
       return setTimeout(
         () => reject(new Error('Users not found')),
         250
       );
     }
 
-    setTimeout(() => resolve(Object.values(users.data)), 250);
-    // setTimeout(() => resolve(users[id]), 250);
+    // setTimeout(() => resolve(Object.values(user.data)), 250);
+    setTimeout(() => resolve(LoggedInUser), 250);
 });
 
 // usage (1)
-// getUsers()
-//   .then((result) => {
-//     console.log(result);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+getUser()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // usage (2)
-const doGetUsers = async (id) => {
+const doGetUsers = async (email) => {
   try {
-    const result = await getUsers(id);
+    const result = await getUser(email);
     console.log("Users", result);
   } catch (error) {
     console.log(error);
   }
 };
 
-doGetUsers();
+// doGetUsers(email);

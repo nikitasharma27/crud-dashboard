@@ -1,5 +1,6 @@
 import { FormControl, FormGroup, Input, InputLabel, Button, Container } from '@mui/material';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import doCreateUser from '../service/create.js';
 import './Add.css';
 
@@ -14,6 +15,7 @@ const initialValues = {
 export const Add = () => {
 
     let [user, setUser] = useState(initialValues);
+    const navigate = useNavigate();
 
     const onValueChange = (e) => {
         setUser({
@@ -27,6 +29,7 @@ export const Add = () => {
     const addUser = () => {
         // console.log(e.target.firstname);
         doCreateUser(user);
+        navigate("/dashboard");
     }
 
     return (

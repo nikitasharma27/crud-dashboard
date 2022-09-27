@@ -7,12 +7,13 @@ const createUser = (data) =>
       reject(new Error('Not all information provided'));
     }
 
-    const id = '20';
+    const id = users.data[users.data.length - 1].id + 1;
     const newUser = { id, ...data };
 
-    users = { ...users, [id]: newUser };
+    users = { ...users.data, [id]: newUser };
 
-    setTimeout(() => resolve(true), 250);
+      console.log(users);
+      setTimeout(() => resolve(true), 250);
 });
 
 // usage

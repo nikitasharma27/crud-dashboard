@@ -1,8 +1,7 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Dashboard.css';
-import users from '../service/db.json'; 
-// import { getUsers } from '../service/getUser.js';
+import { getUsers } from '../service/getUsers.js';
 import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow, Button, Container, Avatar } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -13,15 +12,16 @@ const Dashboard = () => {
 
     }
 
-    // const [users, setUsers] = useState(null);
+    const [users, setUsers] = useState([], "");
 
-    // useEffect(() => {
-    //     const doGetUsers = async () => {
-    //         const result = await getUsers();
-    //             setUsers(result);
-    //         };
-    //     doGetUsers();
-    // }, []);
+    useEffect(() => {
+        const doGetUsers = async () => {
+            const result = await getUsers();
+            setUsers(result);
+            
+            };
+        doGetUsers();
+    }, []);
 
     return (
         <div className="dashboard">
@@ -42,7 +42,7 @@ const Dashboard = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {users.data.map((data) => (
+                            {users.map((data) => (
                                 <TableRow key={data.id}>
                                     <TableCell><Avatar src={data.avatar} /></TableCell>
                                     <TableCell>{data.first_name}</TableCell>
