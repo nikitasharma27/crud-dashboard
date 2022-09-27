@@ -1,0 +1,14 @@
+/* .dashboard {
+    margin-
+} */
+
+.TableBox {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+.TableHeader  {
+   background-color: #efefef;
+   font-weight: 600;
+}
