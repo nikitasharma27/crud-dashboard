@@ -34,7 +34,6 @@ const Login = () => {
                         className="form-control"></input>
                     <br  />
                     <input type="text" placeholder="Enter your password"
-                        onChange={(e) => setPassword(e.target.value)} 
                         className="form-control"></input>
                     <br />
                     <Button variant="contained" size="large" onClick={doGetUsers} className="btn">Login</Button>
