@@ -33,13 +33,13 @@ getUser()
   });
 
 // usage (2)
-const doGetUsers = async (email) => {
-  try {
-    const result = await getUser(email);
-    console.log("Users", result);
-  } catch (error) {
-    console.log(error);
-  }
-};
+// const doGetUsers = async (email) => {
+//   try {
+//     const result = await getUser(email);
+//     console.log("Users", result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 // doGetUsers(email);

@@ -25,13 +25,13 @@ getUsers()
   });
 
 // usage (2)
-const doGetUsers = async () => {
-  try {
-    const result = await getUsers();
-    console.log("Users", result);
-  } catch (error) {
-    console.log(error);
-  }
-};
+// const doGetUsers = async () => {
+//   try {
+//     const result = await getUsers();
+//     console.log("Users", result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 // doGetUsers();
